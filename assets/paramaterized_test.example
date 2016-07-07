@@ -1,0 +1,11 @@
+from nose_parameterized import parameterized
+
+class TestAdd(unittest.TestCase):
+
+    @parameterized.expand([
+        [2, 2],
+        [4, 4],
+        [10, 99],
+    ])
+    def should_add_two_numbers(self, x, y):
+        self.assertEqual(x + y, add(x, y))

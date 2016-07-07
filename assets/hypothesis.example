@@ -1,0 +1,9 @@
+from hypothesis import given
+from hypothesis.strategies import integers
+
+
+class TestAdd(unittest.TestCase):
+
+    @given(integers(), integers())
+    def should_add_two_numbers(self, x, y):
+        self.assertEqual(x + y, add(x, y))
