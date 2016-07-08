@@ -46,7 +46,7 @@ const images = {
 preloader(images);
 
 const theme = createTheme({
-  primary: "#ff3348"  
+  primary: "#ff3348"
 });
 // "#ff4081"
 
@@ -119,7 +119,20 @@ export default class Presentation extends React.Component {
             />
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={2} textColor="white">What's in the box?!</Heading>
+            <Heading size={4}>Getting more confident...</Heading>
+            <CodePane
+              lang="python"
+              source={require("raw!../assets/paramaterized_test_more.example")}
+              margin="20px auto"
+            />
+            <CodePane
+              lang="bash"
+              source={require("raw!../assets/parameterized_test_more.output.example")}
+              margin="20px auto"
+            />
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={2} textColor="tertiary">What's in the box?!</Heading>
             <CodePane
               lang="python"
               source={require("raw!../assets/awesome_add.example")}
@@ -127,7 +140,7 @@ export default class Presentation extends React.Component {
             />
           </Slide>
           <Slide transition={["fade"]} bgColor="primary">
-            <Heading size={2} textColor="white">Enter <code>hypothesis</code></Heading>
+            <Heading size={2} textColor="tertiary">Enter <code>hypothesis</code></Heading>
             <CodePane
               lang="python"
               source={require("raw!../assets/hypothesis.example")}
@@ -149,89 +162,74 @@ export default class Presentation extends React.Component {
               style={{overflow: "scroll", height: "500px"}}
             />
           </Slide>
-          {/* Remove below here */}
-          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
-            <Appear fid="1">
-              <Heading size={1} caps fit textColor="primary">
-                Full Width
-              </Heading>
-            </Appear>
-            <Appear fid="2">
-              <Heading size={1} caps fit textColor="tertiary">
-                Adjustable Darkness
-              </Heading>
-            </Appear>
-            <Appear fid="3">
-              <Heading size={1} caps fit textColor="primary">
-                Background Imagery
-              </Heading>
-            </Appear>
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={4} textColor="tertiary">Another Example</Heading>
+            <CodePane
+              lang="python"
+              source={require("raw!../assets/sort.example")}
+              margin="20px auto"
+            />
           </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Flexible Layouts</Heading>
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={3} textColor="tertiary">Easier failures</Heading>
+            <CodePane
+              lang="python"
+              source={require("raw!../assets/sort_fail.example")}
+              margin="20px auto"
+            />
+          </Slide>
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={3} textColor="tertiary">More Strategies</Heading>
             <Layout>
               <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
-                </Heading>
+                <List>
+                  <ListItem>booleans</ListItem>
+                  <ListItem>floats</ListItem>
+                  <ListItem>fractions</ListItem>
+                  <ListItem>text</ListItem>
+                  <ListItem>tuples</ListItem>
+                  <ListItem>sets</ListItem>
+                </List>
               </Fill>
               <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
-                </Heading>
+                <List>
+                  <ListItem>dictionaries</ListItem>
+                  <ListItem>permutations</ListItem>
+                  <ListItem>none</ListItem>
+                  <ListItem>sampled_from</ListItem>
+                  <ListItem>just</ListItem>
+                  <ListItem>one_of</ListItem>
+                </List>
               </Fill>
             </Layout>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black">
-            <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
-            </BlockQuote>
-          </Slide>
-          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
-            <Heading caps fit size={1} textColor="primary">
-              Inline Markdown
+          <Slide transition={["slide", "spin"]} align="center center" bgColor="primary">
+            <Heading caps size={1} textColor="tertiary">
+              Thanks!
             </Heading>
-            <Markdown>
-              {`
-![Markdown Logo](${images.markdown.replace("/", "")})
-
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And lets not forget **bold**
-              `}
-            </Markdown>
-          </Slide>
-          <Slide transition={["slide", "spin"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
-              Smooth
-            </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
-            </Heading>
-          </Slide>
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-            <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>React-Router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
+            <Heading size={6} caps>Further Learning</Heading>
+            <List style={{ listStylePosition: 'outside' }}>
+              <ListItem style={{ fontSize: '2rem' }}>Better Testing With Less Code
+                <List>
+                  <ListItem style={{ fontSize: '2rem' }}>Matt Bachmann</ListItem>
+                  <ListItem style={{ fontSize: '2rem' }}>https://us.pycon.org/2016/schedule/presentation/1927/</ListItem>
+                </List>
+              </ListItem>
+              <ListItem style={{ fontSize: '2rem' }}>
+                Hypothesis
+                <List>
+                  <ListItem style={{ fontSize: '2rem' }}>http://hypothesis.works/</ListItem>
+                </List>
+              </ListItem>
+              <ListItem style={{ fontSize: '2rem' }}>
+                Spectacle
+                <List>
+                  <ListItem style={{ fontSize: '2rem' }}>Write presentations in React!</ListItem>
+                  <ListItem style={{ fontSize: '2rem' }}>https://github.com/FormidableLabs/spectacle</ListItem>
+                  <ListItem style={{ fontSize: '2rem' }}>https://github.com/FormidableLabs/spectacle-boilerplate</ListItem>
+                </List>
+              </ListItem>
             </List>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
-            <Interactive/>
-          </Slide>
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
-              Made with love in Seattle by
-            </Heading>
-            <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
           </Slide>
         </Deck>
       </Spectacle>

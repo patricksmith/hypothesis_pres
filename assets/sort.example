@@ -1,0 +1,11 @@
+from hypothesis import given
+from hypothesis.strategies import lists, integers
+
+
+class TestSort(unittest.TestCase):
+
+    @given(lists(integers()))
+    def test_sort(self, numbers):
+        sorted_list = sort(numbers)
+        self.assertIsInstance(sorted_list, list)
+        self.assertTrue(all([a <= b for a, b in zip(sorted_list, sorted_list[1:])]))

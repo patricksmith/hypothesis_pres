@@ -6,6 +6,9 @@ class TestAdd(unittest.TestCase):
         [2, 2, 4],
         [4, 4, 8],
         [10, 99, 109],
+        [-1, 1, 0],
+        [123, 0, 123],
+        [100123879, 827342342, 927466221]
     ])
-    def should_add_two_numbers(self, x, y, expected):
+    def test_sequence(self, x, y, expected):
         self.assertEqual(expected, add(x, y))
